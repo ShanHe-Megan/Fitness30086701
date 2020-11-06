@@ -1,0 +1,59 @@
+﻿@model FitnessWeb30086701.Models.Class
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Class</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoachName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoachName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassLocation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
