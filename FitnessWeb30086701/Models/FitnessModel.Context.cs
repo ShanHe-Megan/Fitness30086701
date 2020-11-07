@@ -27,5 +27,7 @@ namespace FitnessWeb30086701.Models
     
         public virtual DbSet<Class> Classes { get; set; }
         public virtual DbSet<ClassRegistration> ClassRegistrations { get; set; }
+
+        public System.Data.Entity.DbSet<FitnessWeb30086701.Models.Location> Locations { get; set; }
     }
 }
