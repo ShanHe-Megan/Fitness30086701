@@ -12,7 +12,7 @@ namespace FitnessWeb30086701.Controllers
 {
     public class ClassRegistrationsController : Controller
     {
-        private FitnessEntities db = new FitnessEntities();
+        private Entities db = new Entities();
 
         // GET: ClassRegistrations
         public ActionResult Index()
@@ -48,7 +48,7 @@ namespace FitnessWeb30086701.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,DOB,Email,Address,ClassId,UserId")] ClassRegistration classRegistration)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,DOB,Email,Address,ClassId")] ClassRegistration classRegistration)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace FitnessWeb30086701.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,DOB,Email,Address,ClassId,UserId")] ClassRegistration classRegistration)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,DOB,Email,Address,ClassId")] ClassRegistration classRegistration)
         {
             if (ModelState.IsValid)
             {

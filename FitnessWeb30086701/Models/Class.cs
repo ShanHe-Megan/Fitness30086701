@@ -22,8 +22,8 @@ namespace FitnessWeb30086701.Models
     
         public int Id { get; set; }
         public string ClassName { get; set; }
-        public string ClassDetail { get; set; }
         public System.DateTime ClassDate { get; set; }
+        public string ClassDetail { get; set; }
         public string CoachName { get; set; }
         public string ClassLocation { get; set; }
     

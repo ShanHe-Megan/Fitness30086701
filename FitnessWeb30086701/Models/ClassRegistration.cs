@@ -21,7 +21,6 @@ namespace FitnessWeb30086701.Models
         public string Email { get; set; }
         public string Address { get; set; }
         public int ClassId { get; set; }
-        public string UserId { get; set; }
     
         public virtual Class Class { get; set; }
     }

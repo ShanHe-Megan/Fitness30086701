@@ -12,7 +12,7 @@ namespace FitnessWeb30086701.Controllers
 {
     public class ClassesController : Controller
     {
-        private FitnessEntities db = new FitnessEntities();
+        private Entities db = new Entities();
 
         // GET: Classes
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace FitnessWeb30086701.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ClassName,ClassDetail,ClassDate,CoachName,ClassLocation")] Class @class)
+        public ActionResult Create([Bind(Include = "Id,ClassName,ClassDate,ClassDetail,CoachName,ClassLocation")] Class @class)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace FitnessWeb30086701.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ClassName,ClassDetail,ClassDate,CoachName,ClassLocation")] Class @class)
+        public ActionResult Edit([Bind(Include = "Id,ClassName,ClassDate,ClassDetail,CoachName,ClassLocation")] Class @class)
         {
             if (ModelState.IsValid)
             {
