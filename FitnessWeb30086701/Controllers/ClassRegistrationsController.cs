@@ -7,20 +7,28 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FitnessWeb30086701.Models;
+using Microsoft.AspNet.Identity;
 
 namespace FitnessWeb30086701.Controllers
 {
+    [Authorize]
     public class ClassRegistrationsController : Controller
     {
         private Entities db = new Entities();
-
         // GET: ClassRegistrations
-        public ActionResult Index()
+        public ActionResult Index1()
         {
             var classRegistrations = db.ClassRegistrations.Include(c => c.Class);
-            return View(classRegistrations.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            return View(db.ClassRegistrations.Where(m => m.UserId ==
+           currentUserId).ToList());
         }
-
+        [Authorize(Roles = "Admin")]
+        public ActionResult Index2()
+        {
+            var classRegistrations = db.ClassRegistrations.Include(c => c.Class);
+            return View(db.ClassRegistrations.ToList());
+        }
         // GET: ClassRegistrations/Details/5
         public ActionResult Details(int? id)
         {

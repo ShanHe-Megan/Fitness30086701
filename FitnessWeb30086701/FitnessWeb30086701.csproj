@@ -386,6 +386,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\1.jpg.jpg" />
+    <Content Include="image\2.jpg.jpg" />
+    <Content Include="image\3.jpg.jpg" />
+    <Content Include="image\4.jpg.jpg" />
+    <Content Include="image\5.jpg.jpeg" />
     <Content Include="image\boxing.jpg" />
     <Content Include="image\circle.jpg" />
     <Content Include="image\taichi.png" />
@@ -627,13 +632,14 @@
     <Content Include="Views\ClassRegistrations\Delete.cshtml" />
     <Content Include="Views\ClassRegistrations\Details.cshtml" />
     <Content Include="Views\ClassRegistrations\Edit.cshtml" />
-    <Content Include="Views\ClassRegistrations\Index.cshtml" />
+    <Content Include="Views\ClassRegistrations\Index1.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
     <Content Include="Views\Home\Send_Email.cshtml" />
+    <Content Include="Views\ClassRegistrations\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

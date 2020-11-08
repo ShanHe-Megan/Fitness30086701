@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - My Fitness Web Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/bootstrap")
@@ -23,7 +23,6 @@
     <link rel="stylesheet"
           href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
           type="text/css" />
-
 
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
@@ -47,9 +46,16 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Manage Classes", "Index", "Classes")</li>
-                    <li>@Html.ActionLink("Manage Members", "Index", "Manage")</li>
+                    <li>@Html.ActionLink("Classes", "Index", "Classes")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (ViewContext.HttpContext.User.IsInRole("Admin")) { 
+                            <li>@Html.ActionLink("Manage Classes", "Index", "Classes")</li>
+                            <li>@Html.ActionLink("Manage Registration", "Index2", "ClassRegistrations")</li>
+                        }
+                    }
                     <li>@Html.ActionLink("Location", "Index", "Locations")</li>
+                    <li>@Html.ActionLink("My Booking", "Index1", "ClassRegistrations")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -59,7 +65,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My Fitness Web Application</p>
         </footer>
     </div>
 

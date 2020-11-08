@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<FitnessWeb30086701.Models.ClassRegistration>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index1";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -57,10 +57,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Class.ClassName)
                 </td>
-
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })|
-                        @Html.ActionLink("Details", "Details", new { id = item.Id })|
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </tr>
         }
     </tbody>
