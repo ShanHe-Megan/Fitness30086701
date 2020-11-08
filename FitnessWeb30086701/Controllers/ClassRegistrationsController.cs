@@ -58,15 +58,12 @@ namespace FitnessWeb30086701.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,DOB,Email,Address,ClassId")] ClassRegistration classRegistration)
         {
-            if (ModelState.IsValid)
-            {
+            classRegistration.UserId = User.Identity.GetUserId();
+            classRegistration.Id = db.ClassRegistrations.Count() + 1;
                 db.ClassRegistrations.Add(classRegistration);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                return RedirectToAction("Index1");
 
-            ViewBag.ClassId = new SelectList(db.Classes, "Id", "ClassName", classRegistration.ClassId);
-            return View(classRegistration);
         }
 
         // GET: ClassRegistrations/Edit/5
@@ -96,7 +93,7 @@ namespace FitnessWeb30086701.Controllers
             {
                 db.Entry(classRegistration).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index2");
             }
             ViewBag.ClassId = new SelectList(db.Classes, "Id", "ClassName", classRegistration.ClassId);
             return View(classRegistration);
@@ -125,7 +122,7 @@ namespace FitnessWeb30086701.Controllers
             ClassRegistration classRegistration = db.ClassRegistrations.Find(id);
             db.ClassRegistrations.Remove(classRegistration);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index2");
         }
 
         protected override void Dispose(bool disposing)
