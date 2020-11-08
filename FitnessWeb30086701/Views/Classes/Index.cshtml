@@ -96,17 +96,19 @@
                 <td>
                     @Html.ActionLink("Register", "Create","ClassRegistrations")
                 </td>
+                
                 @if (User.Identity.IsAuthenticated)
                 {
-                    if (ViewContext.HttpContext.User.IsInRole("Admin,Staff")) { 
-                        <td>
+                    if (ViewContext.HttpContext.User.IsInRole("Admin")) { 
+                <td>
                     @Html.ActionLink("Create New", "Create", new { id = item.Id })|
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id })|
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })        
-                        </td>
+                       </td>
                     }
                 }
+                
             </tr>
         }
     </tbody>
