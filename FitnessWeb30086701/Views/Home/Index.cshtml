@@ -1,31 +1,53 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@{ ViewBag.Title = "Home Page";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<style>
+    .box {
+        display: inline-flex;
+        text-align: center;
+        justify-content: center;
+    }
+</style>
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Fitness Web</h1>
+    <p class="lead">Explore popular classes included in your membership</p>
+    <div class="box">
+        <div>
+            <img src="~/image/yoga.jpg" alter="YoGa" title="YoGa" />
+            <div id="boxa">YoGa</div>
+        </div>
+        <div>
+            <img src="~/image/boxing.jpg" alter="Boxing" title="Boxing" />
+            <div id="boxb">Boxing</div>
+        </div>
+        <div>
+            <img src="~/image/circle.jpg" alter="Circle" title="Circle" />
+            <div id="boxc">Circle</div>
+        </div>
+        <div>
+            <img src="~/image/taichi.png" alter="TaiChi" title="TaiChi" />
+            <div id="boxd">TaiChi</div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Coronavirus (COVID-19)</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            There are some restrict and advice about covid-19.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://www.australia.gov.au/">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Update</h2>
+        <p>The timetables of classes will be changed because of covid-19. Please contact your coach before you come to our club.</p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Reference</h2>
+        <p>The design idea and some information of this website refers to a fitness web.</p>
+        <p><a class="btn btn-default" href="https://www.fitnessfirst.com.au/">Learn more &raquo;</a></p>
     </div>
 </div>
+

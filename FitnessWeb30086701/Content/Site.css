@@ -3,6 +3,12 @@
     padding-bottom: 20px;
 }
 
+.box {
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;

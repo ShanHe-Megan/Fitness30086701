@@ -20,7 +20,9 @@ namespace FitnessWeb30086701
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-datetimepicker.js"
+                      ));
 
             bundles.Add(new ScriptBundle("~/bundles/mapbox").Include(
                        "~/Scripts/location.js"));
@@ -28,6 +30,8 @@ namespace FitnessWeb30086701
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/moment").Include(
+                      "~/Scripts/moment-with-*"));
         }
     }
 }

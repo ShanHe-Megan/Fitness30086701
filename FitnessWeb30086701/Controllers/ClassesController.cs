@@ -35,6 +35,7 @@ namespace FitnessWeb30086701.Controllers
             return View(@class);
         }
 
+        [Authorize(Roles = "Admin,Staff")]
         // GET: Classes/Create
         public ActionResult Create()
         {
@@ -44,8 +45,10 @@ namespace FitnessWeb30086701.Controllers
         // POST: Classes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Staff")]
         public ActionResult Create([Bind(Include = "Id,ClassName,ClassDate,ClassDetail,CoachName,ClassLocation")] Class @class)
         {
             if (ModelState.IsValid)
@@ -58,6 +61,7 @@ namespace FitnessWeb30086701.Controllers
             return View(@class);
         }
 
+        [Authorize(Roles = "Admin,Staff")]
         // GET: Classes/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -78,6 +82,7 @@ namespace FitnessWeb30086701.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Staff")]
         public ActionResult Edit([Bind(Include = "Id,ClassName,ClassDate,ClassDetail,CoachName,ClassLocation")] Class @class)
         {
             if (ModelState.IsValid)
@@ -90,6 +95,7 @@ namespace FitnessWeb30086701.Controllers
         }
 
         // GET: Classes/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +111,7 @@ namespace FitnessWeb30086701.Controllers
         }
 
         // POST: Classes/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
